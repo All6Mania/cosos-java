@@ -1,0 +1,77 @@
+package EVA1_6_AUTOMOVIL;
+
+public class EVA1_6_AUTOMOVIL {
+
+	public EVA1_6_AUTOMOVIL() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		//A1 = auto 1
+		Auto A1 = new Auto();
+		A1.setMarca("ñevi");
+		A1.setModelo("ferrero");
+		A1.setAño(2016);
+		A1.setDueño("Elian");
+		A1.setPlacas("ABC-348-A");
+		A1.imprimirDatos();
+	}
+
+}
+
+................................................
+
+package EVA1_6_AUTOMOVIL;
+
+public class Auto {
+	private String marca;
+	private String modelo;
+	private String placas;
+	private int año;
+	private String dueño;
+	private int adeudo;
+
+	public Auto() {
+		marca = "Toyota";
+		modelo = "Corolla";
+		placas = "AAA-00-00";
+		año = 1984;
+		dueño = "sin dueño";
+		adeudo = 2000;
+	}
+	public void setMarca(String x) {
+		marca = x;
+	}
+	public void setModelo(String y) {
+		modelo = y;
+	}
+	public void setPlacas(String z) {
+		placas = z;
+	}
+	public void setAño(int a) {
+		año = a;
+		if (año < 2000)
+			adeudo = 1500;
+		else if (año >= 2001 && año <=2005)
+			adeudo = 2000;
+		else if (año >= 2006 && año <= 2010)
+			adeudo = 2500;
+		else if (año >= 2011 && año <= 2015)
+			adeudo = 3000;
+		else if (año >= 2016 && año <= 2023)
+			adeudo = 4000;
+	}
+	public void setDueño(String d) {
+		dueño = d;
+	}
+	public void imprimirDatos() {
+		System.out.println("Marca: " + marca);
+		System.out.println("Modelo: " + modelo);
+		System.out.println("Año: " + año);
+		System.out.println("Adeudo por año del Auto: $" + adeudo);
+		System.out.println("Dueño: " + dueño);
+		System.out.println("Placas: " + placas);
+	}
+	
+}

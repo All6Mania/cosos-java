@@ -1,0 +1,79 @@
+package EVA1_3_CONSTRUCTORES;
+
+public class EVA1_3_CONSTRUCTORES {
+
+	public EVA1_3_CONSTRUCTORES() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		CuentaBancaria c1 = new CuentaBancaria();
+		c1.setCliente("ELIAN");
+		c1.setCuenta("123");
+		c1.setSaldo(5000);
+		
+		c1.Datos();
+		
+		CuentaBancaria c2 = new CuentaBancaria("1234",100,"joaquin");
+		c2.Datos();
+		
+
+		CuentaBancaria c3 = new CuentaBancaria("1235",800,"monika");
+		c3.Datos();
+}
+	
+}
+
+....................................................................................
+
+package EVA1_3_CONSTRUCTORES;
+
+public class CuentaBancaria {
+	//  Datos
+	
+		private double saldo;
+		private String cuenta;
+		private String cliente;
+		
+		/*Contructor:
+		Modificador de accesos nombre de la clase(argumentos)
+		*/
+		public CuentaBancaria() {//Constructor default
+			cuenta = "123";
+			saldo = 1000000;
+			cliente = "________";
+		}
+		
+		public CuentaBancaria(String x, double y, String z) {
+		cuenta = x;
+		saldo = y;
+		cliente = z;
+		}
+		
+		
+	//	gets
+		
+		public double getSaldo() {
+			return saldo;}
+		public String getCuenta() {
+			return cuenta;}
+		public String getCliente() {
+			return cliente;}
+		
+	//	sets
+		
+		public void setSaldo(double S) {
+			saldo = S;}
+		public void setCuenta(String C) {
+			cuenta = C;}
+		public void setCliente(String C) {
+			cliente = C;}
+		
+		public void Datos() {
+			System.out.println("Cuenta: " + cuenta);
+			System.out.println("Cliente: " + cliente);
+			System.out.println("Saldo: " + saldo + "\n");
+		}
+	}
